@@ -71,6 +71,9 @@ jobs:
   post-comment:
     runs-on: ubuntu-latest
 
+    permissions:
+      pull-requests: write
+
     needs: [ hello_world_job, build_job, test_script_job, lint_check_job ]
 
     steps:
