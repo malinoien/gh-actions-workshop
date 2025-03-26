@@ -45,3 +45,25 @@ jobs:
 
       - name: Build
         run: npm run build
+
+  test_script_job:
+    name: Run test 🧪
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Run test script
+        run: npm run test
+
+  lint_check_job:
+    name: Lint check 🧹
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Run lint check
+        run: npm run lint:check
