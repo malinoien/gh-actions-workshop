@@ -50,6 +50,10 @@ jobs:
     name: Run test 🧪
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
       - name: Run test script
         run: npm run test
 
@@ -57,5 +61,9 @@ jobs:
     name: Lint check 🧹
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
       - name: Run lint check
         run: npm run lint:check
